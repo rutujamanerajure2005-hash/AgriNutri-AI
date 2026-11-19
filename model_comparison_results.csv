@@ -1,0 +1,6 @@
+Model,Test Accuracy (%),CV Mean (%),CV Std Dev (%)
+Random Forest,99.55,99.43,0.48
+Gradient Boosting,98.86,98.69,0.34
+Decision Tree,97.95,98.52,0.68
+K-Nearest Neighbors,97.73,97.67,0.87
+Support Vector Machine,98.41,97.27,1.07

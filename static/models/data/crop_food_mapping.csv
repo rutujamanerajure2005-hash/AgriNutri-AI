@@ -1,0 +1,23 @@
+crop,food,food_type,nutrition_available
+apple,"Apple, big (Malus domestica)",fruit,yes
+banana,"Banana, ripe, robusta (Musa x paradisiaca)",fruit,yes
+blackgram,"Black gram, whole (Phaseolus mungo)",legume,yes
+chickpea,"Bengal gram, whole (Cicer arietinum)",legume,yes
+coconut,"Coconut, kernel, fresh (Cocos nucifera)",fruit,yes
+coffee,,beverage,no
+cotton,,non_food_crop,no
+grapes,"Grapes, seedless, round, green",fruit,yes
+jute,,non_food_crop,no
+kidneybeans,"Rajmah, red",legume,yes
+lentil,"Lentil whole, brown",legume,yes
+maize,"Maize, dry",cereal,yes
+mango,"Mango, ripe, banganapalli",fruit,yes
+mothbeans,"Moth bean (Vigna aconitifolia)",legume,yes
+mungbean,"Green gram, whole (Phaseolus aureus)",legume,yes
+muskmelon,"Musk melon, orange flesh (Cucumis melon)",fruit,yes
+orange,"Orange, pulp (Citrus aurantium)",fruit,yes
+papaya,"Papaya, ripe (Carcia papaya)",fruit,yes
+pigeonpeas,"Red gram, whole (Cajanus cajan)",legume,yes
+pomegranate,"Pomegranate, maroon seeds (Punica granatum)",fruit,yes
+rice,"Rice, raw, milled (Oryza sativa )",cereal,yes
+watermelon,"Water melon, dark green (sugar baby) (Citrullus vulgaris)",fruit,yes

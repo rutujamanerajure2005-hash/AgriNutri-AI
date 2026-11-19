@@ -1,0 +1,810 @@
+
+/* ===== AgriNutri AI: wider, balanced dashboard ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #f5f8f3;
+    color: #20392a;
+}
+
+main {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    padding: 18px clamp(22px, 5vw, 76px);
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #14532d;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.5vw, 34px);
+}
+
+.nav-links a {
+    color: #405447;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #258044;
+}
+
+.hero {
+    width: 100%;
+    min-height: 430px;
+    padding: 55px clamp(24px, 6vw, 90px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 72px);
+    background: linear-gradient(120deg, #e9f5e9, #f8fbf5);
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-tag,
+.eyebrow {
+    color: #31804a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    color: #164b2b;
+    font-size: clamp(36px, 4.3vw, 60px);
+    line-height: 1.12;
+}
+
+.hero h1 span {
+    color: #39834b;
+}
+
+.hero-content > p,
+.section-heading > p,
+.recommendation-intro > p {
+    color: #607065;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 19px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: #237840;
+    color: #fff;
+}
+
+.secondary-btn {
+    border: 1px solid #bfd7c3;
+    background: #fff;
+    color: #205b34;
+}
+
+.hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    margin-top: 22px;
+    color: #45634d;
+    font-size: 13px;
+}
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.hero-visual > img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(25, 75, 40, 0.14);
+}
+
+.hero-image-caption {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.caption-icon {
+    font-size: 27px;
+}
+
+.hero-image-caption strong {
+    color: #194b2c;
+}
+
+.hero-image-caption p {
+    margin: 5px 0 0;
+    color: #69766c;
+    font-size: 13px;
+}
+
+.features-section,
+.result-section {
+    width: 100%;
+    padding: 65px clamp(22px, 5vw, 76px);
+}
+
+.section-heading,
+.result-heading {
+    max-width: 780px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.section-heading h2,
+.result-heading h2,
+.recommendation-intro h2,
+.about-section h2 {
+    margin: 12px 0;
+    color: #194b2c;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.25;
+}
+
+.section-heading p,
+.result-heading p {
+    color: #647368;
+    line-height: 1.7;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid #e5ece4;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 7px 24px rgba(34, 70, 43, 0.045);
+}
+
+.feature-icon {
+    display: grid;
+    width: 55px;
+    height: 55px;
+    place-items: center;
+    border-radius: 15px;
+    font-size: 27px;
+}
+
+.green-icon { background: #e4f4e5; }
+.orange-icon { background: #fff0dd; }
+.blue-icon { background: #e6f1ff; }
+
+.feature-card h3 {
+    margin: 20px 0 10px;
+    color: #234a30;
+    font-size: 21px;
+}
+
+.feature-card p {
+    min-height: 78px;
+    color: #68766b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.feature-link {
+    display: inline-flex;
+    gap: 9px;
+    margin-top: 12px;
+    color: #268045;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 12px;
+    color: #758075;
+    font-size: 13px;
+}
+
+.recommendation-section {
+    width: calc(100% - clamp(32px, 8vw, 140px));
+    max-width: 1500px;
+    margin: 10px auto 60px;
+    padding: clamp(24px, 4vw, 58px);
+    display: grid;
+    grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: clamp(28px, 5vw, 72px);
+    border: 1px solid #e0eae0;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 15px 45px rgba(29, 72, 40, 0.07);
+}
+
+.recommendation-intro {
+    padding-top: 10px;
+}
+
+.recommendation-intro h2 {
+    font-size: clamp(27px, 3vw, 39px);
+}
+
+.input-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 17px;
+    border: 1px solid #dcebdc;
+    border-radius: 12px;
+    background: #f3f9f1;
+}
+
+.input-tip > span {
+    font-size: 21px;
+}
+
+.input-tip p {
+    margin: 0;
+    color: #4f6655;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.form-panel {
+    min-width: 0;
+    padding: clamp(20px, 3vw, 34px);
+    border: 1px solid #edf0eb;
+    border-radius: 18px;
+    background: #fcfdfb;
+}
+
+.form-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.form-heading-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 13px;
+    background: #e7f4e5;
+    font-size: 24px;
+}
+
+.form-panel-heading h3 {
+    margin: 0 0 5px;
+    color: #214d2e;
+    font-size: 21px;
+}
+
+.form-panel-heading p {
+    margin: 0;
+    color: #718073;
+    font-size: 13px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 23px 20px;
+}
+
+.form-group {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    display: block;
+    color: #294d34;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: #708075;
+    font-weight: 500;
+}
+
+.form-group input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid #d7e1d7;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #253a2a;
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9aa69b;
+}
+
+.form-group input:focus {
+    border-color: #3b9255;
+    box-shadow: 0 0 0 3px rgba(59, 146, 85, 0.12);
+}
+
+.form-group small {
+    color: #7c897e;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.predict-btn {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 4px;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 11px;
+    background: #247940;
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.predict-btn:hover {
+    transform: translateY(-1px);
+    background: #185d30;
+}
+
+.form-note {
+    margin: 18px 0 0;
+    color: #7b877d;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.form-error {
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: #fff0ef;
+    color: #a52a24;
+}
+
+.result-section {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.result-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 4vw, 52px);
+    max-width: 1250px;
+    margin: 0 auto 35px;
+    padding: clamp(20px, 3vw, 36px);
+    border: 1px solid #dfeade;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(34, 70, 43, 0.06);
+}
+
+.result-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 390px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.result-details {
+    align-self: center;
+}
+
+.result-label {
+    color: #34804a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.result-details h3 {
+    margin: 12px 0;
+    color: #1e6334;
+    font-size: clamp(32px, 4vw, 46px);
+}
+
+.result-details > p {
+    color: #68766b;
+    line-height: 1.8;
+}
+
+.confidence-box {
+    margin: 24px 0;
+    padding: 19px;
+    border: 1px solid #e1eee0;
+    border-radius: 13px;
+    background: #f5faf3;
+}
+
+.confidence-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #42604a;
+}
+
+.confidence-top strong {
+    color: #247940;
+    font-size: 25px;
+}
+
+.confidence-track {
+    height: 9px;
+    margin: 14px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #dce8da;
+}
+
+.confidence-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: #399451;
+}
+
+.confidence-box > small {
+    color: #748075;
+    line-height: 1.6;
+}
+
+.try-again-btn {
+    display: inline-flex;
+    margin-top: 6px;
+    padding: 12px 17px;
+    border: 1px solid #bcd7c1;
+    border-radius: 9px;
+    color: #267440;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nutrition-result {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: clamp(22px, 3vw, 38px);
+    border: 1px solid #e1ebdd;
+    border-radius: 20px;
+    background: #f8fbf5;
+}
+
+.nutrition-result-heading {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.nutrition-result-heading h2 {
+    margin: 10px 0;
+    color: #1e5931;
+    font-size: 29px;
+}
+
+.nutrition-result-heading p {
+    color: #526a58;
+}
+
+.nutrition-result-heading > small {
+    color: #788579;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.nutrient-card {
+    display: flex;
+    min-width: 0;
+    min-height: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 20px;
+    border: 1px solid #e8eee4;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.nutrient-icon {
+    font-size: 24px;
+}
+
+.nutrient-label {
+    color: #6b796d;
+    font-size: 13px;
+}
+
+.nutrient-card strong {
+    overflow-wrap: anywhere;
+    color: #225b34;
+    font-size: 22px;
+}
+
+.nutrient-card strong small {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.nutrition-source {
+    margin: 25px 0 0;
+    color: #718073;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.nutrition-unavailable {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff8e8;
+    text-align: center;
+}
+
+.about-section {
+    padding: 65px 24px;
+    background: #eaf4e7;
+    text-align: center;
+}
+
+.about-icon {
+    margin-bottom: 15px;
+    font-size: 34px;
+}
+
+.about-section h2 {
+    font-size: clamp(26px, 3vw, 35px);
+}
+
+.about-section > p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #5d7061;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.footer {
+    padding: 32px 20px;
+    background: #123d25;
+    color: #e6f2e7;
+    text-align: center;
+}
+
+.footer-logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footer p {
+    margin: 10px 0;
+    color: #d2e4d3;
+}
+
+.footer small {
+    color: #b3cbb7;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .hero {
+        grid-template-columns: 1fr 0.85fr;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .features-section,
+    .result-section {
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+
+    .recommendation-section {
+        width: calc(100% - 40px);
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-intro {
+        max-width: 720px;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 17px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        font-size: 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 38px 22px;
+    }
+
+    .hero-visual > img {
+        height: 260px;
+    }
+
+    .features-section,
+    .result-section {
+        padding: 42px 18px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card p {
+        min-height: 0;
+    }
+
+    .recommendation-section {
+        width: calc(100% - 28px);
+        margin: 10px auto 35px;
+        padding: 20px 15px;
+        gap: 25px;
+        border-radius: 17px;
+    }
+
+    .form-panel {
+        padding: 20px 15px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+
+    .predict-btn {
+        grid-column: 1;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+        padding: 17px;
+    }
+
+    .result-image img {
+        min-height: 220px;
+        max-height: 300px;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .nutrient-card {
+        min-height: 135px;
+        padding: 15px;
+    }
+
+    .about-section {
+        padding: 45px 22px;
+    }
+}
+
+@media (max-width: 380px) {
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
